@@ -1,0 +1,162 @@
+#!/usr/bin/env sh
+
+set -eu
+
+COMMIT_MSG_FILE="$1"
+
+if [ ! -f "$COMMIT_MSG_FILE" ]; then
+  echo "commit-msg hook: Commit message file not found: $COMMIT_MSG_FILE" >&2
+  exit 1
+fi
+
+first_line=$(head -n1 "$COMMIT_MSG_FILE" | tr -d '\r')
+
+# Allow empty commit messages to be handled by Git itself.
+if [ -z "$first_line" ]; then
+  echo "ERROR: Commit message subject (first line) cannot be empty." >&2
+  exit 1
+fi
+
+# Allow merge and revert commits without additional checks.
+case "$first_line" in
+  "Merge "*|"Revert "*) exit 0 ;;
+esac
+
+branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
+
+# Determine if this is a task branch:
+#   <type>/CHRIS_DEV-<number>
+# where <type> is one of: feat, fix, chore, docs, refactor.
+is_task_branch=0
+branch_type=""
+branch_task_number=""
+expected_task_id=""
+
+case "$branch" in
+  */*)
+    branch_type=${branch%%/*}
+    branch_rest=${branch#*/}
+
+    case "$branch_type" in
+      feat|fix|chore|docs|refactor)
+        case "$branch_rest" in
+          CHRIS_DEV-[0-9]*)
+            branch_task_number=${branch_rest#CHRIS_DEV-}
+            expected_task_id="CHRIS_DEV-$branch_task_number"
+            is_task_branch=1
+            ;;
+        esac
+        ;;
+    esac
+    ;;
+esac
+
+if [ "$is_task_branch" -eq 1 ]; then
+  # Expect commit message format:
+  #   <type>(CHRIS_DEV-<number>): <subject>
+  commit_type=${first_line%%(*}
+  rest=${first_line#"$commit_type"}
+
+  case "$commit_type" in
+    feat|fix|chore|docs|refactor) ;;
+    *)
+      cat >&2 <<EOF
+ERROR: Invalid commit message format for task branch '$branch'.
+
+Expected format:
+  <type>(CHRIS_DEV-$branch_task_number): <subject>
+
+Examples:
+  feat(CHRIS_DEV-$branch_task_number): implement feature X
+  fix(CHRIS_DEV-$branch_task_number): fix bug Y
+
+Where:
+  - <type> is one of: feat, fix, chore, docs, refactor
+  - CHRIS_DEV-<number> matches the task ID from the branch name
+
+Current first line:
+  $first_line
+EOF
+      exit 1
+      ;;
+  esac
+
+  case "$rest" in
+    "(CHRIS_DEV-"[0-9]*"): "*)
+      tmp=${rest#"(CHRIS_DEV-"}
+      commit_task_number=${tmp%%)*}
+      commit_task_id="CHRIS_DEV-$commit_task_number"
+      commit_subject=${rest#*"): "}
+      ;;
+    *)
+      cat >&2 <<EOF
+ERROR: Invalid commit message format for task branch '$branch'.
+
+Expected format:
+  $branch_type(CHRIS_DEV-$branch_task_number): <subject>
+
+Current first line:
+  $first_line
+EOF
+      exit 1
+      ;;
+  esac
+
+  if [ "$commit_type" != "$branch_type" ]; then
+    cat >&2 <<EOF
+ERROR: Commit type does not match branch type.
+
+Branch:
+  $branch
+  -> type: $branch_type
+
+Commit:
+  $first_line
+  -> type: $commit_type
+
+Use:
+  $branch_type($expected_task_id): <subject>
+EOF
+    exit 1
+  fi
+
+  if [ "$commit_task_id" != "$expected_task_id" ]; then
+    cat >&2 <<EOF
+ERROR: Commit task ID does not match branch task ID.
+
+Branch:
+  $branch
+  -> task: $expected_task_id
+
+Commit:
+  $first_line
+  -> task: $commit_task_id
+
+Use:
+  $branch_type($expected_task_id): <subject>
+EOF
+    exit 1
+  fi
+
+  # Prevent meaningless subjects like just "wip".
+  trimmed=$(printf '%s' "$commit_subject" | tr -d '[:space:]')
+  if [ -z "$trimmed" ]; then
+    echo "ERROR: Commit subject cannot be empty after the colon." >&2
+    exit 1
+  fi
+
+  lower=$(printf '%s' "$trimmed" | tr '[:upper:]' '[:lower:]')
+  if [ "$lower" = "wip" ]; then
+    echo "ERROR: Commit subject cannot be just 'wip' on a task branch." >&2
+    exit 1
+  fi
+else
+  # Non-task branches: require at least a non-empty, non-whitespace subject line.
+  trimmed_first=$(printf '%s' "$first_line" | tr -d '[:space:]')
+  if [ -z "$trimmed_first" ]; then
+    echo "ERROR: Commit message subject (first line) cannot be empty or whitespace." >&2
+    exit 1
+  fi
+fi
+
+exit 0

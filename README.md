@@ -1,36 +1,5 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chris Dev Site
 
-## Getting Started
+This repository contains my personal developer website, built with Next.js (App Router), TypeScript, and React. The site is fully internationalized using next-intl v4 with locale-prefixed routes such as `/pl`, `/en`, and `/de`, so all public pages can be translated and navigated consistently. It will expose a small but complete product-style surface: a landing page with a clear call to action, an about section, a contact form that actually submits data, a blog with localized articles, and room for future “lab” apps or demos.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Under the hood, the project is wired with modern tooling: ESLint + Prettier + lint-staged + Husky for consistent code quality and clean commits, Vitest for unit tests, and Playwright for end-to-end tests. The goal is not just to show UI work, but to demonstrate how I structure a real-world full-stack application: typed configuration, i18n-aware routing, disciplined Git workflows (task-based branches and commit messages), and CI-ready test and lint pipelines. As the project evolves, I’ll extend it with a Postgres-backed blog and contact/newsletter flows to showcase backend and database work alongside the front end.
