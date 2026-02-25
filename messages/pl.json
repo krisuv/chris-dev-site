@@ -1,4 +1,25 @@
 {
+  "Shared": {
+    "Language": {
+      "en": "angielski",
+      "pl": "polski",
+      "de": "niemiecki"
+    },
+    "Navigation": {
+      "main-menu": "menu główne",
+      "main-page": "strona główna",
+      "about": "o mnie",
+      "contact": "kontakt",
+      "blog": "blog"
+    },
+    "Footer": {
+      "social-media": "Media społecznościowe",
+      "contact": "Kontakt",
+      "address": "Adres",
+      "tax-id": "NIP",
+      "copyright": "{name} {year} © Wszelkie prawa zastrzeżone"
+    }
+  },
   "HomePage": {
     "title": "Witaj Świecie!"
   }
