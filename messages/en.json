@@ -1,4 +1,25 @@
 {
+  "Shared": {
+    "Language": {
+      "en": "English",
+      "pl": "Polish",
+      "de": "German"
+    },
+    "Navigation": {
+      "main-menu": "main menu",
+      "main-page": "main page",
+      "about": "about",
+      "contact": "contact",
+      "blog": "blog"
+    },
+    "Footer": {
+      "social-media": "Social media",
+      "contact": "Contact",
+      "address": "Address",
+      "tax-id": "Tax ID",
+      "copyright": "{name} {year} © All rights reserved"
+    }
+  },
   "HomePage": {
     "title": "Hello world!"
   }

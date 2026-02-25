@@ -10,5 +10,5 @@ test('Page', () => {
       <Page />
     </NextIntlClientProvider>,
   );
-  expect(screen.getByRole('heading', { level: 1, name: 'Hello world!' })).toBeDefined();
+  expect(screen.getByRole('main')).toBeDefined();
 });

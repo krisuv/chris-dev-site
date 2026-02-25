@@ -4,6 +4,8 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { jetBrainsMono, robotoSans, robotoMono } from './ui/fonts';
+import Footer from './ui/components/organisms/Footer';
+import Header from './ui/components/organisms/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -27,9 +29,13 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html lang="en">
       <body
-        className={`bg-background text-foreground min-h-full ${robotoSans.variable} ${robotoMono.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`bg-background text-foreground min-h-full ${robotoSans.variable} ${robotoMono.variable} ${jetBrainsMono.variable} antialiased flex flex-col`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

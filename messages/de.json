@@ -1,4 +1,25 @@
 {
+  "Shared": {
+    "Language": {
+      "en": "Englisch",
+      "pl": "Polnisch",
+      "de": "Deutsch"
+    },
+    "Navigation": {
+      "main-menu": "Hauptmenü",
+      "main-page": "Startseite",
+      "about": "Über mich",
+      "contact": "Kontakt",
+      "blog": "Blog"
+    },
+    "Footer": {
+      "social-media": "Soziale Medien",
+      "contact": "Kontakt",
+      "address": "Adresse",
+      "tax-id": "Steuer-ID",
+      "copyright": "{name} {year} © Alle Rechte vorbehalten"
+    }
+  },
   "HomePage": {
     "title": "Hallo Welt!"
   }

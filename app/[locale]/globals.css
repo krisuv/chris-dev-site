@@ -91,44 +91,54 @@
   --font-sans: var(--font-roboto-sans);
   --font-mono: var(--font-roboto-mono);
   --font-code: var(--font-jetBrains-mono);
+
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 720px;
+  --breakpoint-desktop: 1269px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a {
-  font-family: var(--font-jetBrains-mono);
-  font-weight: 700;
-}
+@layer base {
+  html {
+    height: 100%;
+  }
 
-h1 {
-  font-size: 2rem;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    font-family: var(--font-jetBrains-mono);
+    font-weight: 700;
+  }
 
-h2 {
-  font-size: 1.7rem;
-}
+  h1 {
+    font-size: 2rem;
+  }
 
-h3 {
-  font-size: 1.5rem;
-}
+  h2 {
+    font-size: 1.7rem;
+  }
 
-h4 {
-  font-size: 1.25rem;
-}
+  h3 {
+    font-size: 1.5rem;
+  }
 
-h5 {
-  font-size: 1.15rem;
-}
+  h4 {
+    font-size: 1.25rem;
+  }
 
-h6 {
-  font-size: 1rem;
-}
+  h5 {
+    font-size: 1.15rem;
+  }
 
-p {
-  font-family: var(--font-roboto-sans);
-  font-size: 1rem;
+  h6 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-family: var(--font-roboto-sans);
+    font-size: 1rem;
+  }
 }
