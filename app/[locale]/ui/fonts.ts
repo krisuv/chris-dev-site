@@ -1,4 +1,4 @@
-import { JetBrains_Mono, Roboto, Roboto_Mono } from 'next/font/google';
+import { JetBrains_Mono, Roboto, Roboto_Mono, Space_Grotesk } from 'next/font/google';
 
 export const jetBrainsMono = JetBrains_Mono({
   variable: '--font-jetBrains-mono',
@@ -12,5 +12,10 @@ export const robotoSans = Roboto({
 
 export const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
+  subsets: ['latin', 'latin-ext'],
+});
+
+export const spaceGrotesk = Space_Grotesk({
+  variable: '--font-spaceGrotesk-sans',
   subsets: ['latin', 'latin-ext'],
 });

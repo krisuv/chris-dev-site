@@ -21,6 +21,24 @@
     }
   },
   "HomePage": {
-    "title": "Hello world!"
+    "title": "Hallo Wordl!",
+    "HeroSection": {
+      "heading-top": "Chris makes",
+      "heading-bottom": "things happen",
+      "groups": {
+        "interfaces": {
+          "title": "Building modern interfaces",
+          "description": "I build interfaces that feel smooth from the first interaction. React, Next.js and a component-driven approach. I focus on performance, structure and details that users notice immediately. From Figma to production, I keep things consistent and scalable."
+        },
+        "systems": {
+          "title": "Powering robust systems",
+          "description": "I build backend systems that do their job and do not get in the way. Node.js with NestJS or Express for APIs and integrations. Clear structure, no unnecessary complexity, and systems that can grow without breaking. I work with both SQL and NoSQL, depending on what actually fits the use case."
+        },
+        "tools": {
+          "title": "Tools that get things done",
+          "description": "TypeScript keeps the code predictable and consistent. Linux is my daily environment. Figma is where ideas take shape before they turn into real interfaces. I keep commits clean and readable, and I work comfortably with Agile workflows. I also document things clearly using tools like Notion, Google Docs or Confluence."
+        }
+      }
+    }
   }
 }

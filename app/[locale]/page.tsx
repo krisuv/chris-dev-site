@@ -1,3 +1,9 @@
+import TechStackSection from './ui/components/sections/TechStackSection';
+
 export default function HomePage() {
-  return <main></main>;
+  return (
+    <main>
+      <TechStackSection />
+    </main>
+  );
 }

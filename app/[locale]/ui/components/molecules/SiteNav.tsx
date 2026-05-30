@@ -5,9 +5,9 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 const items = [
-  { key: 'main-page', href: '/' },
-  { key: 'about', href: '/about' },
   { key: 'contact', href: '/contact' },
+  // { key: 'about', href: '/about' },
+  { key: 'main-page', href: '/' },
   { key: 'blog', href: '/blog' },
 ] as const;
 
@@ -25,7 +25,7 @@ export default function SiteNav() {
           <li
             key={key}
             className={clsx(
-              "text-primary-100 font-bold text-base hover:underline before:content-['/'] before:text-primary-200",
+              "text-primary-100 font-bold text-base text-center hover:underline before:content-['/'] before:text-primary-200 w-14",
               {
                 'text-secondary-200 before:text-secondary-300 font-extrabold': pathname === href,
               },

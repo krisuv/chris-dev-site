@@ -1,14 +1,20 @@
 'use client';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { Language } from '@/shared/enums';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/LanguageSelect.module.css';
 
 const LanguageFlags: Record<Language, string> = {
-  en: '🇺🇸',
+  en: '🇬🇧',
   de: '🇩🇪',
   pl: '🇵🇱',
+};
+
+const LanguageLabels: Record<Language, string> = {
+  en: 'English',
+  de: 'Deutsch',
+  pl: 'Polski',
 };
 
 type LanguageSelectProps = Record<string, never>;
@@ -19,7 +25,6 @@ type LanguageSelectProps = Record<string, never>;
  */
 export default function LanguageSelect(props: LanguageSelectProps) {
   void props;
-  const t = useTranslations('Shared.Language');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -72,7 +77,7 @@ export default function LanguageSelect(props: LanguageSelectProps) {
         onClick={() => setIsOpen((open) => !open)}
       >
         <span>{LanguageFlags[selectedLanguage]}</span>
-        <span>{t(selectedLanguage)}</span>
+        <span>{LanguageLabels[selectedLanguage]}</span>
       </button>
       {isOpen ? (
         <ul className={styles.menu} role="listbox" aria-labelledby="language">
@@ -87,7 +92,7 @@ export default function LanguageSelect(props: LanguageSelectProps) {
                 onClick={() => onSelectLocale(lang)}
               >
                 <span>{LanguageFlags[lang]}</span>
-                <span>{t(lang)}</span>
+                <span>{LanguageLabels[lang]}</span>
               </button>
             </li>
           ))}

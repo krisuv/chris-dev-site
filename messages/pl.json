@@ -7,7 +7,7 @@
     },
     "Navigation": {
       "main-menu": "menu główne",
-      "main-page": "strona główna",
+      "main-page": "główna",
       "about": "o mnie",
       "contact": "kontakt",
       "blog": "blog"
@@ -21,6 +21,24 @@
     }
   },
   "HomePage": {
-    "title": "Witaj Świecie!"
+    "title": "Witaj Świecie!",
+    "HeroSection": {
+      "heading-top": "Robota zrobiona",
+      "heading-bottom": "kod dowieziony",
+      "groups": {
+        "interfaces": {
+          "title": "Nowoczesne interfejsy",
+          "description": "Buduję interfejsy, które od pierwszej interakcji działają płynnie i bez tarcia. React, Next.js i podejście oparte na komponentach dają mi kontrolę nad wydajnością, strukturą i detalami, które użytkownik naprawdę zauważa. Od Figmy po produkcję dbam o spójność, skalowalność i sensowne decyzje projektowe."
+        },
+        "systems": {
+          "title": "Solidne systemy",
+          "description": "Buduję backendy, które po prostu robią swoją robotę i nie przeszkadzają. Node.js z NestJS albo Express sprawdza się u mnie przy API i integracjach. Stawiam na czytelną strukturę, brak zbędnej złożoności i systemy, które mogą rosnąć bez ciągłego przepisywania. Pracuję zarówno z SQL, jak i NoSQL, zależnie od tego, co faktycznie pasuje do problemu."
+        },
+        "tools": {
+          "title": "Narzędzia, które dowożą",
+          "description": "TypeScript utrzymuje kod w ryzach i ułatwia przewidywalny rozwój projektu. Linux to moje codzienne środowisko pracy. W Figmie porządkuję pomysły zanim trafią do implementacji. Dbam o czytelne commity, wygodnie pracuję w Agile i dokumentuję rzeczy jasno w narzędziach takich jak Notion, Google Docs czy Confluence."
+        }
+      }
+    }
   }
 }
