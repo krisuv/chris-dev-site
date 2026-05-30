@@ -88,7 +88,7 @@
   --color-background: var(--color-primary-900);
   --color-foreground: var(--color-primary-50);
 
-  --font-sans: var(--font-roboto-sans);
+  --font-sans: var(--font-spaceGrotesk-sans);
   --font-mono: var(--font-roboto-mono);
   --font-code: var(--font-jetBrains-mono);
 
@@ -114,11 +114,13 @@
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    line-height: 100%;
   }
 
   h2 {
     font-size: 1.7rem;
+    line-height: 110%;
   }
 
   h3 {
@@ -138,7 +140,8 @@
   }
 
   p {
-    font-family: var(--font-roboto-sans);
+    font-family: var(--font-spaceGrotesk-sans);
     font-size: 1rem;
+    line-height: 190%;
   }
 }

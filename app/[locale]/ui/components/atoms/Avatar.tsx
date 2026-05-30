@@ -41,7 +41,7 @@ export default function Avatar(props: AvatarProps) {
         width={AvatarSize[size]}
         height={AvatarSize[size]}
         alt=""
-        className={clsx(`rounded-full relative z-10 opacity-35 grayscale`)}
+        className="rounded-full relative z-10 opacity-35 grayscale"
       />
     </div>
   );

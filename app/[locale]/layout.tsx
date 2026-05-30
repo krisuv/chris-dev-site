@@ -3,7 +3,7 @@ import './globals.css';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import { jetBrainsMono, robotoSans, robotoMono } from './ui/fonts';
+import { jetBrainsMono, robotoSans, robotoMono, spaceGrotesk } from './ui/fonts';
 import Footer from './ui/components/organisms/Footer';
 import Header from './ui/components/organisms/Header';
 
@@ -29,7 +29,7 @@ export default async function LocaleLayout(props: Props) {
   return (
     <html lang="en">
       <body
-        className={`bg-background text-foreground min-h-full ${robotoSans.variable} ${robotoMono.variable} ${jetBrainsMono.variable} antialiased flex flex-col`}
+        className={`bg-background text-foreground min-h-full ${robotoSans.variable} ${robotoMono.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased flex flex-col`}
       >
         <NextIntlClientProvider>
           <Header />

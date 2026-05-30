@@ -48,7 +48,7 @@ export default function Footer(props: FooterProps) {
               <li>
                 <p className=" font-code text-sm text-primary-25">
                   <span className="font-extrabold">{t('address')}:&nbsp;</span>
-                  <span className="font-medium">Wróblewskiego 16/6 Szczecin, 64-345</span>
+                  <span className="font-medium">Szczecin, Zachodniopomorskie</span>
                 </p>
               </li>
               <li>

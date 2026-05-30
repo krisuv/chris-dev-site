@@ -21,6 +21,24 @@
     }
   },
   "HomePage": {
-    "title": "Hallo Welt!"
+    "title": "Hallo Welt!",
+    "HeroSection": {
+      "heading-top": "Chris schafft",
+      "heading-bottom": "alles gut",
+      "groups": {
+        "interfaces": {
+          "title": "Moderne Interfaces",
+          "description": "Ich entwickle Interfaces, die sich vom ersten Moment an flüssig und sauber anfühlen. Mit React, Next.js und einem komponentenbasierten Ansatz achte ich auf Performance, Struktur und Details, die Nutzer sofort wahrnehmen. Von Figma bis zur Produktion halte ich alles konsistent, skalierbar und nachvollziehbar."
+        },
+        "systems": {
+          "title": "Robuste Systeme",
+          "description": "Ich baue Backend-Systeme, die ihre Aufgabe zuverlässig erfüllen und nicht im Weg stehen. Node.js mit NestJS oder Express nutze ich für APIs und Integrationen. Klare Struktur, keine unnötige Komplexität und Systeme, die wachsen können, ohne sofort zu brechen. Ich arbeite mit SQL und NoSQL, je nachdem, was für den Anwendungsfall wirklich passt."
+        },
+        "tools": {
+          "title": "Werkzeuge, die liefern",
+          "description": "TypeScript hält den Code konsistent und gut vorhersehbar. Linux ist meine tägliche Arbeitsumgebung. In Figma werden Ideen greifbar, bevor daraus echte Interfaces entstehen. Ich achte auf saubere Commits, arbeite sicher in Agile-Setups und dokumentiere klar in Tools wie Notion, Google Docs oder Confluence."
+        }
+      }
+    }
   }
 }
