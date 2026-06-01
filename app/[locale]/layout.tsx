@@ -27,7 +27,7 @@ export default async function LocaleLayout(props: Props) {
   }
 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`bg-background text-foreground min-h-full ${robotoSans.variable} ${robotoMono.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased flex flex-col`}
       >
