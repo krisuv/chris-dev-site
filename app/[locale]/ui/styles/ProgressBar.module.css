@@ -1,0 +1,8 @@
+.progress {
+  background: repeating-conic-gradient(#fff 0 25%, #0000 0 50%) 50% / 20px 20px;
+  background: repeating-conic-gradient(
+      var(--color-primary-500) 0 25%,
+      var(--color-primary-100) 0 50%
+    )
+    left top / 16px 16px;
+}

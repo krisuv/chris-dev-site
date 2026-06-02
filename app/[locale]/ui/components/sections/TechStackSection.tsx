@@ -75,7 +75,7 @@ export default function TechStackSection() {
             role="img"
             aria-label=""
             className={clsx(
-              'absolute -top-[30%] -left-4 w-[calc(100%+4rem)] opacity-50 text-[0.5rem] tracking-[2px] bg-linear-to-b select-none overflow-hidden max-w-none tablet:-left-1/2 tablet:w-auto tablet:max-w-full tablet:translate-x-1/2',
+              'absolute -top-[30%] -left-4 w-[calc(100%+4rem)] opacity-50 text-[0.5rem] tracking-[2px] bg-linear-to-b select-none overflow-hidden max-w-none desktop:-left-1/2 desktop:w-auto desktop:max-w-full desktop:translate-x-1/2',
               AsciiColors[color],
             )}
             style={{

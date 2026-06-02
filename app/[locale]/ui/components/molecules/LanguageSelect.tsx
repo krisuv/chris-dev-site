@@ -4,18 +4,11 @@ import { Language } from '@/shared/enums';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/LanguageSelect.module.css';
-
-const LanguageFlags: Record<Language, string> = {
-  en: '🇬🇧',
-  de: '🇩🇪',
-  pl: '🇵🇱',
-};
-
-const LanguageLabels: Record<Language, string> = {
-  en: 'English',
-  de: 'Deutsch',
-  pl: 'Polski',
-};
+import {
+  LanguageFlags,
+  LanguageLabels,
+  LanguagesSpoken,
+} from '@/shared/constants/language.constants';
 
 type LanguageSelectProps = Record<string, never>;
 
@@ -30,7 +23,7 @@ export default function LanguageSelect(props: LanguageSelectProps) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const languages = Object.values(Language) as Language[];
+  const languages = Object.keys(LanguagesSpoken) as Language[];
   const selectedLanguage = languages.includes(locale as Language)
     ? (locale as Language)
     : Language.EN;

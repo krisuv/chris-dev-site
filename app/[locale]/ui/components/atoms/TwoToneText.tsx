@@ -24,7 +24,7 @@ function TwoToneText(props: TwoToneTextProps): ReactNode {
     case 'h2':
       return (
         <h2
-          className={`font-code text-primary-100 text-shadow-[3px_0px_var(--color-primary-200)] ${className}`}
+          className={`font-code text-primary-100 text-shadow-[3.5px_0px_var(--color-primary-200)] ${className}`}
         >
           {children}
         </h2>
