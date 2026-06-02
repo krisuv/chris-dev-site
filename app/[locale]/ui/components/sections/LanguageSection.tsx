@@ -8,26 +8,23 @@ import { useTranslations } from 'next-intl';
 
 export default function LanguageSection() {
   const tLanguage = useTranslations('Shared.Language');
+  const tSection = useTranslations('HomePage.LanguageSection');
+
   const languageSkills = Object.entries(LanguageSkills) as [Language, LanguageLevel][];
 
   return (
-    <SectionTemplate>
-      <TwoToneText heading="h2">Chris knows human languages as well</TwoToneText>
+    <SectionTemplate className="flex flex-col gap-2 mb-30">
+      <TwoToneText heading="h2" className="mb-2">
+        {tSection('title')}
+      </TwoToneText>
 
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, quis blanditiis
-        temporibus nostrum aspernatur ab at dignissimos reiciendis animi? Obcaecati in sed totam
-        excepturi deleniti aspernatur quidem incidunt, dignissimos inventore.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui possimus est deleniti vitae
-        pariatur voluptates officia voluptatem! Eum, ab ea?
-      </p>
+      <p>{tSection('paragraph1')}</p>
+      <p>{tSection('paragraph2')}</p>
 
-      <dl>
+      <dl className="mt-1">
         {languageSkills.map(([language, level], index) => (
           <div key={language} className={clsx({ 'mb-4': index !== languageSkills.length - 1 })}>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-0.5">
               <dt className="font-code font-medium">
                 <span className="mr-1" aria-hidden>
                   {LanguageFlags[language]}

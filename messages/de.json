@@ -23,6 +23,11 @@
   },
   "HomePage": {
     "title": "Hallo Welt!",
+    "LanguageSection": {
+      "title": "Fremdsprachen",
+      "paragraph1": "Fremdsprachen faszinieren mich seit jeher – nicht nur als Kommunikationsmittel, sondern als Fenster in andere Kulturen und Denkweisen.",
+      "paragraph2": "Ich lerne aktiv neue Sprachen und versuche, sie im Alltag zu nutzen. Jede neue Sprache eröffnet mir eine neue Art, die Welt zu verstehen."
+    },
     "HeroSection": {
       "heading-top": "Chris schafft",
       "heading-bottom": "alles gut",

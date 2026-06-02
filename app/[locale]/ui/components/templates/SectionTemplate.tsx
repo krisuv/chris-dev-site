@@ -8,7 +8,7 @@ interface SectionTemplateProps {
 const SectionTemplate = (props: SectionTemplateProps) => {
   const { className = '', children } = props;
   return (
-    <section className={`w-full max-w-[700px] mx-auto px-4 tablet:px-0 ${className}`}>
+    <section className={`w-full max-w-87.5 mx-auto px-4 desktop:px-0 ${className}`}>
       {children}
     </section>
   );

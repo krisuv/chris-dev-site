@@ -40,6 +40,11 @@
           "description": "TypeScript utrzymuje kod w ryzach i ułatwia przewidywalny rozwój projektu. Linux to moje codzienne środowisko pracy. W Figmie porządkuję pomysły zanim trafią do implementacji. Dbam o czytelne commity, wygodnie pracuję w Agile i dokumentuję rzeczy jasno w narzędziach takich jak Notion, Google Docs czy Confluence."
         }
       }
+    },
+    "LanguageSection": {
+      "title": "Języki obce",
+      "paragraph1": "Języki obce fascynują mnie od zawsze – to nie tylko narzędzie komunikacji, ale przede wszystkim okno na inną kulturę i sposób myślenia.",
+      "paragraph2": "Aktywnie uczę się kolejnych języków i staram się używać ich na co dzień. Każdy nowy język to dla mnie nowy sposób rozumienia świata."
     }
   }
 }
