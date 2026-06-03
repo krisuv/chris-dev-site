@@ -23,6 +23,11 @@
   },
   "HomePage": {
     "title": "Hallo Wordl!",
+    "A11ySection": {
+      "title": "Accessability always included",
+      "paragraph1": "Accessibility is not an afterthought — I build it in from the start. Semantic HTML, keyboard navigation and proper ARIA attributes are part of every component I write.",
+      "paragraph2": "I follow WCAG guidelines and test with screen readers to make sure interfaces work for everyone, regardless of how they interact with the web."
+    },
     "LanguageSection": {
       "title": "Foreign languages",
       "paragraph1": "Foreign languages have always fascinated me — not just as a communication tool, but as a window into different cultures and ways of thinking.",

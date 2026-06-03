@@ -41,6 +41,11 @@
         }
       }
     },
+    "A11ySection": {
+      "title": "Dostępność w standardzie",
+      "paragraph1": "Dostępność to nie dodatek — wbudowuję ją od samego początku. Semantyczny HTML, nawigacja klawiaturą i odpowiednie atrybuty ARIA to część każdego komponentu, który piszę.",
+      "paragraph2": "Stosuję wytyczne WCAG i testuję z czytnikami ekranu, żeby interfejsy działały dla każdego, niezależnie od sposobu korzystania z sieci."
+    },
     "LanguageSection": {
       "title": "Języki obce",
       "paragraph1": "Języki obce fascynują mnie od zawsze – to nie tylko narzędzie komunikacji, ale przede wszystkim okno na inną kulturę i sposób myślenia.",
