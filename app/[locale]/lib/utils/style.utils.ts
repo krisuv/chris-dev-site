@@ -92,9 +92,23 @@ export function calculateColorContrastRatio(color1: RGBColor, color2: RGBColor):
   return (lighter + 0.05) / (darker + 0.05);
 }
 
-export function contrastSignalColor(luminance: number): string {
-  const maxLuminance = 21;
-  const maxDeg = 140;
+export enum WCAGConformanceLevel {
+  A_ESSENTIAL = 'A',
+  AA_RECOMMENDED = 'AA',
+  AAA_MAXIMUM = 'AAA',
+  FAIL = 'FAIL',
+}
 
-  return `hsl(${Math.round((luminance / maxLuminance) * maxDeg)}deg 77% 53%)`;
+export function calcWCAGScore(ratio: number, fontSize: number): WCAGConformanceLevel {
+  const isLargeText = fontSize >= 18 || fontSize >= 14;
+
+  if (isLargeText) {
+    if (ratio >= 4.5) return WCAGConformanceLevel.AAA_MAXIMUM;
+    if (ratio >= 3) return WCAGConformanceLevel.AA_RECOMMENDED;
+    return WCAGConformanceLevel.FAIL;
+  }
+
+  if (ratio >= 7) return WCAGConformanceLevel.AAA_MAXIMUM;
+  if (ratio >= 4.5) return WCAGConformanceLevel.AA_RECOMMENDED;
+  return WCAGConformanceLevel.FAIL;
 }
