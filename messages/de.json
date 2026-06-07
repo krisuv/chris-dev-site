@@ -23,6 +23,36 @@
   },
   "HomePage": {
     "title": "Hallo Welt!",
+    "A11ySection": {
+      "title": "Barrierefreiheit von Anfang an",
+      "paragraph1": "Barrierefreiheit ist kein Nachgedanke — ich baue sie von Anfang an ein. Semantisches HTML, Tastaturnavigation und korrekte ARIA-Attribute sind fester Bestandteil jedes Komponenten, das ich schreibe.",
+      "paragraph2": "Ich halte mich an WCAG-Richtlinien und teste mit Screenreadern, damit Interfaces für alle funktionieren, unabhängig davon, wie sie das Web nutzen.",
+      "interactiveText": "Benutze die Steuerelemente unten, um diesen Text zu verändern",
+      "ColorContrastItem": {
+        "label": "Farbkontrast",
+        "description": "Farbkontrast misst den wahrgenommenen Helligkeitsunterschied zwischen Vorder- und Hintergrundfarbe. WCAG 2.1 erfordert ein Mindestverhältnis von 4,5:1 für normalen Text (AA) und 7:1 für erhöhte Lesbarkeit (AAA).",
+        "helperText": {
+          "fail": "Unzureichender Kontrast — erfüllt keine WCAG-Anforderung. Versuche eine hellere oder dunklere Farbe.",
+          "a": "Erfüllt Stufe A — nur für großen oder fetten Text geeignet.",
+          "aa": "Erfüllt Stufe AA — der empfohlene Standard für die meisten Texte.",
+          "aaa": "Erfüllt Stufe AAA — maximaler Kontrast für optimale Lesbarkeit."
+        }
+      },
+      "FontSizeItem": {
+        "label": "Schriftgröße",
+        "description": "Die Schriftgröße beeinflusst direkt die Lesbarkeit. Unterhalb von 12px wird Text für die meisten Nutzer schwer lesbar. 16px ist der Browser-Standard und gilt als barrierefreie Grundlage.",
+        "score": {
+          "error": "Zu klein",
+          "warning": "Grenzwertig",
+          "success": "Gut"
+        },
+        "helperText": {
+          "error": "Zu klein für komfortables Lesen. Auf mindestens 12px erhöhen.",
+          "warning": "Lesbar, aber grenzwertig. 16px oder mehr wird empfohlen.",
+          "success": "Gute Größe für barrierefreies und komfortables Lesen."
+        }
+      }
+    },
     "LanguageSection": {
       "title": "Fremdsprachen",
       "paragraph1": "Fremdsprachen faszinieren mich seit jeher – nicht nur als Kommunikationsmittel, sondern als Fenster in andere Kulturen und Denkweisen.",

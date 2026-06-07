@@ -1,14 +1,29 @@
-import { ReactNode } from 'react';
+import { createRelativeColor } from '@/app/[locale]/lib/utils/style.utils';
+import { CSSProperties, ReactNode } from 'react';
 
 interface TwoToneTextProps {
   heading?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   hidden?: boolean;
   children: ReactNode;
   className?: string;
+  color?: string;
+  size?: string;
 }
 
 function TwoToneText(props: TwoToneTextProps): ReactNode {
-  const { heading, hidden, className = '', children } = props;
+  const { heading, hidden, className = '', children, color, size } = props;
+
+  const style: CSSProperties = {
+    color: color ?? 'auto',
+  };
+
+  if (color) {
+    style.textShadow = `4px 0px ${createRelativeColor(color, 15, -25)}`;
+  }
+
+  if (size) {
+    style.fontSize = size;
+  }
 
   if (hidden) return null;
 
@@ -17,6 +32,7 @@ function TwoToneText(props: TwoToneTextProps): ReactNode {
       return (
         <h1
           className={`font-code text-primary-100 text-shadow-[4px_0px_var(--color-primary-200)] ${className}`}
+          style={style}
         >
           {children}
         </h1>
@@ -24,7 +40,8 @@ function TwoToneText(props: TwoToneTextProps): ReactNode {
     case 'h2':
       return (
         <h2
-          className={`font-code text-primary-100 text-shadow-[3.5px_0px_var(--color-primary-200)] ${className}`}
+          className={`font-code text-primary-100 text-shadow-[4px_0px_var(--color-primary-200)] ${className}`}
+          style={style}
         >
           {children}
         </h2>
@@ -33,6 +50,7 @@ function TwoToneText(props: TwoToneTextProps): ReactNode {
       return (
         <p
           className={`font-code font-extrabold text-base text-primary-100 text-shadow-[2px_0px_var(--color-primary-300)] ${className}`}
+          style={{ color }}
         >
           {children}
         </p>

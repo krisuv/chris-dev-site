@@ -23,6 +23,36 @@
   },
   "HomePage": {
     "title": "Hallo Wordl!",
+    "A11ySection": {
+      "title": "Accessability always included",
+      "paragraph1": "Accessibility is not an afterthought — I build it in from the start. Semantic HTML, keyboard navigation and proper ARIA attributes are part of every component I write.",
+      "paragraph2": "I follow WCAG guidelines and test with screen readers to make sure interfaces work for everyone, regardless of how they interact with the web.",
+      "interactiveText": "Use the controls below to modify this text",
+      "ColorContrastItem": {
+        "label": "Color contrast",
+        "description": "Color contrast measures the perceived brightness difference between foreground and background. WCAG 2.1 requires a minimum ratio of 4.5:1 for normal text (AA) and 7:1 for enhanced readability (AAA).",
+        "helperText": {
+          "fail": "Insufficient contrast — fails all WCAG requirements. Try a lighter or darker color.",
+          "a": "Meets level A — only suitable for large or bold text.",
+          "aa": "Meets level AA — the recommended standard for most text.",
+          "aaa": "Meets level AAA — maximum contrast for optimal readability."
+        }
+      },
+      "FontSizeItem": {
+        "label": "Font size",
+        "description": "Font size directly affects readability. Below 12px text becomes hard to read for most users. 16px is the browser default and widely considered the accessible baseline.",
+        "score": {
+          "error": "Too small",
+          "warning": "Borderline",
+          "success": "Good"
+        },
+        "helperText": {
+          "error": "Too small for comfortable reading. Increase to at least 12px.",
+          "warning": "Readable but borderline. 16px or larger is recommended.",
+          "success": "Good size for accessible, comfortable reading."
+        }
+      }
+    },
     "LanguageSection": {
       "title": "Foreign languages",
       "paragraph1": "Foreign languages have always fascinated me — not just as a communication tool, but as a window into different cultures and ways of thinking.",
