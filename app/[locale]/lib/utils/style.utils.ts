@@ -100,7 +100,9 @@ export enum WCAGConformanceLevel {
 }
 
 export function calcWCAGScore(ratio: number, fontSize: number): WCAGConformanceLevel {
-  const isLargeText = fontSize >= 18 || fontSize >= 14;
+  // bold text - 14pt ~ 18.5px
+  const isLargeText = fontSize >= 18;
+  console.log('calc score: ', fontSize, ratio);
 
   if (isLargeText) {
     if (ratio >= 4.5) return WCAGConformanceLevel.AAA_MAXIMUM;
@@ -112,3 +114,62 @@ export function calcWCAGScore(ratio: number, fontSize: number): WCAGConformanceL
   if (ratio >= 4.5) return WCAGConformanceLevel.AA_RECOMMENDED;
   return WCAGConformanceLevel.FAIL;
 }
+
+export interface ScoreStyleVariant {
+  wrapper: string;
+  score: string;
+  helperText: string;
+}
+
+export const wcagScoreStyleMap: Record<WCAGConformanceLevel, ScoreStyleVariant> = {
+  [WCAGConformanceLevel.FAIL]: {
+    wrapper: 'border-error-300',
+    score: 'bg-error-300 text-error-900',
+    helperText: 'text-error-300',
+  },
+  [WCAGConformanceLevel.A_ESSENTIAL]: {
+    wrapper: 'border-warning-300',
+    score: 'bg-warning-300 text-warning-900',
+    helperText: 'text-warning-300',
+  },
+  [WCAGConformanceLevel.AA_RECOMMENDED]: {
+    wrapper: 'border-secondary-300',
+    score: 'bg-secondary-300 text-secondary-900',
+    helperText: 'text-secondary-300',
+  },
+  [WCAGConformanceLevel.AAA_MAXIMUM]: {
+    wrapper: 'border-success-700',
+    score: 'bg-success-700 text-success-200',
+    helperText: 'text-success-200',
+  },
+};
+
+export enum FontSizeScore {
+  ERROR = 'Too small',
+  WARNING = 'Borderline',
+  SUCCESS = 'Good',
+}
+
+export function calcFontSizeScore(fontSize: number): FontSizeScore {
+  if (fontSize >= 16) return FontSizeScore.SUCCESS;
+  if (fontSize >= 12) return FontSizeScore.WARNING;
+  return FontSizeScore.ERROR;
+}
+
+export const fontSizeScoreStyleMap: Record<FontSizeScore, ScoreStyleVariant> = {
+  [FontSizeScore.ERROR]: {
+    wrapper: 'border-error-300',
+    score: 'bg-error-300 text-error-900',
+    helperText: 'text-error-300',
+  },
+  [FontSizeScore.WARNING]: {
+    wrapper: 'border-secondary-300',
+    score: 'bg-secondary-300 text-secondary-900',
+    helperText: 'text-secondary-300',
+  },
+  [FontSizeScore.SUCCESS]: {
+    wrapper: 'border-success-700',
+    score: 'bg-success-700 text-success-200',
+    helperText: 'text-success-200',
+  },
+};

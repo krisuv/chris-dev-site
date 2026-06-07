@@ -144,4 +144,8 @@
     font-size: 1rem;
     line-height: 190%;
   }
+
+  button {
+    cursor: pointer;
+  }
 }

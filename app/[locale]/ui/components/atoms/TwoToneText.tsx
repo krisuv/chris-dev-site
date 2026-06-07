@@ -7,10 +7,11 @@ interface TwoToneTextProps {
   children: ReactNode;
   className?: string;
   color?: string;
+  size?: string;
 }
 
 function TwoToneText(props: TwoToneTextProps): ReactNode {
-  const { heading, hidden, className = '', children, color } = props;
+  const { heading, hidden, className = '', children, color, size } = props;
 
   const style: CSSProperties = {
     color: color ?? 'auto',
@@ -18,6 +19,10 @@ function TwoToneText(props: TwoToneTextProps): ReactNode {
 
   if (color) {
     style.textShadow = `4px 0px ${createRelativeColor(color, 15, -25)}`;
+  }
+
+  if (size) {
+    style.fontSize = size;
   }
 
   if (hidden) return null;

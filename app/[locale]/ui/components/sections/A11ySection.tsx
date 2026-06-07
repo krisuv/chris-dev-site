@@ -1,106 +1,41 @@
 'use client';
 
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { HEXColor } from '@/shared/types';
 import SectionTemplate from '../templates/SectionTemplate';
 import TwoToneText from '../atoms/TwoToneText';
-import { useTranslations } from 'next-intl';
-import { ChangeEvent, useMemo, useState } from 'react';
-import {
-  calculateColorContrastRatio,
-  calcWCAGScore,
-  convertHEXToRGB,
-  WCAGConformanceLevel,
-} from '@/app/[locale]/lib/utils/style.utils';
-import { HEXColor } from '@/shared/types';
-import styles from '../../styles/A11ySection.module.css';
-import WCAGScoredItem from '../organisms/WCAGScoredItem';
+import ColorContrastItem from '../organisms/ColorContrastItem';
+import FontSizeItem from '../organisms/FontSizeItem';
+
+const DEFAULT_FONT_SIZE_PX = 16;
+const MAX_FONT_SIZE_PX = 64;
 
 export default function A11ySection() {
   const t = useTranslations('HomePage.A11ySection');
-
-  const [color, setColor] = useState('#ffffff');
-  const [fontSizePx] = useState(16);
-
-  const colorContrastRatio = useMemo(
-    () =>
-      Number(
-        calculateColorContrastRatio(
-          convertHEXToRGB('#060714'),
-          convertHEXToRGB(color as HEXColor),
-        ).toFixed(2),
-      ),
-
-    [color],
-  );
-
-  const score = calcWCAGScore(colorContrastRatio, fontSizePx);
-
-  function onChangeColor(event: ChangeEvent<HTMLInputElement>): void {
-    setColor(event.target.value);
-  }
-
-  const ItemStyles: Record<
-    WCAGConformanceLevel,
-    { wrapper: string; score: string; helperText: string }
-  > = {
-    FAIL: {
-      wrapper: 'border-error-500',
-      score: 'bg-error-500 text-error-900',
-      helperText: 'It works',
-    },
-    AAA: {
-      wrapper: 'border-success-700',
-      score: 'bg-success-700 text-success-200',
-      helperText: 'It works',
-    },
-    AA: {
-      wrapper: 'border-secondary-300',
-      score: 'bg-secondary-300 text-secondary-900',
-      helperText: 'It works',
-    },
-    A: {
-      wrapper: 'border-warning-300',
-      score: 'bg-warning-300 text-warning-900',
-      helperText: 'It works',
-    },
-  };
+  const [color, setColor] = useState<HEXColor>('#ffffff');
+  const [fontSize, setFontSize] = useState(DEFAULT_FONT_SIZE_PX);
 
   return (
-    <SectionTemplate>
-      <TwoToneText heading="h2" color={color}>
+    <SectionTemplate className="flex flex-col gap-2 mb-30">
+      <TwoToneText heading="h2" className="mb-2">
         {t('title')}
       </TwoToneText>
 
-      <WCAGScoredItem
-        id="col"
-        value={
-          <p className="text-[2rem]/[115%] text-bold font-code">
-            {String(colorContrastRatio).split('.')[0]}
-            <span className="tracking-tighter">.</span>
-            <span className="text-[1.4rem] min-w-3.5 opacity-80">
-              {String(colorContrastRatio).split('.')[1] ?? '00'}
-            </span>
-            :1
-          </p>
-        }
-        inputControl={
-          <input
-            type="color"
-            // TODO: useId
-            id="col"
-            name="col"
-            value={color}
-            onChange={onChangeColor}
-            className={styles.color}
-          />
-        }
-        description="lorem20"
-        label="Color contrast"
-        score={score}
-        helperText={ItemStyles[score].helperText}
-      />
-
       <p>{t('paragraph1')}</p>
       <p>{t('paragraph2')}</p>
+
+      <p
+        className="font-bold text-base/[120%] flex items-center justify-center mt-2"
+        style={{ color, fontSize: `${fontSize}px`, height: `${4 * 1.2 * MAX_FONT_SIZE_PX}px` }}
+      >
+        {t('interactiveText')}
+      </p>
+
+      <div className="flex flex-col gap-5">
+        <ColorContrastItem color={color} onColorChange={setColor} fontSize={fontSize} />
+        <FontSizeItem fontSize={fontSize} onChange={(fontSize) => setFontSize(fontSize)} />
+      </div>
     </SectionTemplate>
   );
 }

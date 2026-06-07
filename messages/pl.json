@@ -44,7 +44,32 @@
     "A11ySection": {
       "title": "Dostępność w standardzie",
       "paragraph1": "Dostępność to nie dodatek — wbudowuję ją od samego początku. Semantyczny HTML, nawigacja klawiaturą i odpowiednie atrybuty ARIA to część każdego komponentu, który piszę.",
-      "paragraph2": "Stosuję wytyczne WCAG i testuję z czytnikami ekranu, żeby interfejsy działały dla każdego, niezależnie od sposobu korzystania z sieci."
+      "paragraph2": "Stosuję wytyczne WCAG i testuję z czytnikami ekranu, żeby interfejsy działały dla każdego, niezależnie od sposobu korzystania z sieci.",
+      "interactiveText": "Użyj poniższych kontrolek, żeby zmodyfikować ten tekst",
+      "ColorContrastItem": {
+        "label": "Kontrast kolorów",
+        "description": "Kontrast kolorów mierzy różnicę jasności między kolorem tekstu a tłem. WCAG 2.1 wymaga stosunku minimum 4,5:1 dla normalnego tekstu (AA) i 7:1 dla podwyższonej czytelności (AAA).",
+        "helperText": {
+          "fail": "Niewystarczający kontrast — nie spełnia żadnego wymogu WCAG. Spróbuj jaśniejszego lub ciemniejszego koloru.",
+          "a": "Spełnia poziom A — dopuszczalne jedynie dla dużego lub pogrubionego tekstu.",
+          "aa": "Spełnia poziom AA — zalecany standard dla większości tekstu.",
+          "aaa": "Spełnia poziom AAA — maksymalny kontrast dla optymalnej czytelności."
+        }
+      },
+      "FontSizeItem": {
+        "label": "Rozmiar czcionki",
+        "description": "Rozmiar czcionki bezpośrednio wpływa na czytelność tekstu. Poniżej 12px tekst staje się trudny do odczytania dla większości użytkowników. 16px to domyślna wartość przeglądarki uznawana za dostępny standard.",
+        "score": {
+          "error": "Za mały",
+          "warning": "Graniczny",
+          "success": "Dobry"
+        },
+        "helperText": {
+          "error": "Za mały do wygodnego czytania. Zwiększ do co najmniej 12px.",
+          "warning": "Czytelny, ale graniczny. Zalecane 16px lub więcej.",
+          "success": "Dobry rozmiar dla dostępnego i komfortowego czytania."
+        }
+      }
     },
     "LanguageSection": {
       "title": "Języki obce",
