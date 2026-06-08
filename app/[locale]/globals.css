@@ -86,7 +86,7 @@
   --color-warning-950: oklch(0.15 0.025 52);
 
   --color-background: var(--color-primary-900);
-  --color-foreground: var(--color-primary-50);
+  --color-foreground: var(--color-primary-25);
 
   --font-sans: var(--font-spaceGrotesk-sans);
   --font-mono: var(--font-roboto-mono);

@@ -17,6 +17,8 @@ import GitIcon from '../atoms/icons/GitIcon';
 import JiraIcon from '../atoms/icons/JiraIcon';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
+import { PaletteColor } from '@/shared/types';
+import { AsciiColors } from '@/shared/constants/styles.constants';
 
 type TechStackGroupId = 'interfaces' | 'systems' | 'tools';
 
@@ -30,7 +32,7 @@ interface TechStackItem {
 interface TechStackGroup {
   id: TechStackGroupId;
   asciiIcon?: string;
-  color: 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'error';
+  color: PaletteColor;
   items: TechStackItem[];
 }
 
@@ -246,15 +248,6 @@ const asciiDesktop = `
    @@@@%=:................................................................................:=%@@@@   
      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                               
 `;
-
-const AsciiColors: Record<TechStackGroup['color'], string> = {
-  accent: 'from-accent-100 to-accent-800',
-  error: '',
-  primary: 'from-primary-100 to-primary-800',
-  secondary: 'from-secondary-100 to-seconday-800',
-  success: 'from-success-100 to-success-800',
-  warning: '',
-};
 
 const mockTechStackGroups: TechStackGroup[] = [
   {

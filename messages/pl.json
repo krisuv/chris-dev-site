@@ -75,6 +75,29 @@
       "title": "Języki obce",
       "paragraph1": "Języki obce fascynują mnie od zawsze – to nie tylko narzędzie komunikacji, ale przede wszystkim okno na inną kulturę i sposób myślenia.",
       "paragraph2": "Aktywnie uczę się kolejnych języków i staram się używać ich na co dzień. Każdy nowy język to dla mnie nowy sposób rozumienia świata."
+    },
+    "ContactSection": {
+      "title": "Obserwuj mnie w mediach społecznościowych",
+      "paragraph": "Skontaktuj się ze mną przez dowolny z kanałów poniżej. Czy to oferta pracy, pomysł na projekt czy zwykłe pytanie — zawsze chętnie nawiążę kontakt.",
+      "items": {
+        "linkedin": {
+          "header": "Linkedin",
+          "content": "Mój profil zawodowy i networking w branży"
+        },
+        "github": {
+          "header": "GitHub",
+          "content": "Przeglądaj moje repozytoria open-source i wkład w projekty."
+        },
+        "contact": {
+          "header": {
+            "prefix": "Pytania?",
+            "highlight": "Skontaktuj się",
+            "suffix": "ze mną bezpośrednio!"
+          },
+          "content": "Wyślij mi e-mail na 1krzysztof.bujalski@gmail.com lub użyj dedykowanego formularza kontaktowego w celu bardziej szczegółowego opisu.",
+          "formLink": "➤ Do formularza kontaktowego"
+        }
+      }
     }
   }
 }

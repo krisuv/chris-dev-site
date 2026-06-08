@@ -75,6 +75,29 @@
           "description": "TypeScript keeps the code predictable and consistent. Linux is my daily environment. Figma is where ideas take shape before they turn into real interfaces. I keep commits clean and readable, and I work comfortably with Agile workflows. I also document things clearly using tools like Notion, Google Docs or Confluence."
         }
       }
+    },
+    "ContactSection": {
+      "title": "Follow me on social media",
+      "paragraph": "Feel free to reach out through any of the channels below. Whether it's a job opportunity, a project idea, or just a question — I'm always happy to connect.",
+      "items": {
+        "linkedin": {
+          "header": "Linkedin",
+          "content": "My professional profile and industry networking"
+        },
+        "github": {
+          "header": "GitHub",
+          "content": "Explore my open-source repositories and contributions."
+        },
+        "contact": {
+          "header": {
+            "prefix": "Questions?",
+            "highlight": "Contact",
+            "suffix": "with me directly!"
+          },
+          "content": "Send me an email at 1krzysztof.bujalski@gmail.com or use the dedicated contact form for a more detailed description.",
+          "formLink": "➤ To contact form"
+        }
+      }
     }
   }
 }
